@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from app.routes.trace_routes import router as trace_router
 app = FastAPI()
-
+app.include_router(trace_router)
 origins = [
     "http://localhost:5173",
 ]
